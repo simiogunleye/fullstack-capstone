@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy: 
+  provider: heroku
+  api_key:
+    secure: WcJrg195oKPLPhA/MFavrsTxpsbFPHPfmke5JZY/N95tgPPrSDzW4OIe8N2Tgddr7wumLBO30/zfMipPC0B5upl2lLpcJW+oj+/pGpCA14nj539b/hMfV6g1Vt10EsqWh6my2VSgA6NdaPsSf20P1//9X8+kau2WSZyT/zd9S8R//DeVMhVOC2jyz0/YP2ISjKicf/uh/btfowigv9tICr5u7cKqpsPyDF5zAnGaNg7F+3ALk+98yk6LSZu6eIkUOREmM9S+yuNHzdTVLCs66UyrE6vaZ2klo8ShtYorcv1idid5xEoZaXIPQOwYRNQg3UfDDfvYwGJTRNvwlxUfBAjtLeS4weGTrqi/M7Sw7isW3rsPP18t6mvmP9HZkS/df9dAY/8zGxqVorzaK+u8Aks30lNKfDTOPp4yW1bgoDkV2sTVd7D6aqIUIIIgKQOCinD1Q2FzW4W/w46carWTx5Im+yU0DQksLtigWcMfe6tC742ldajTHejckT0zv6yr+/oO99Ulu/SgcbvVMrT5R0yKcfniFT8PAcHqZy4xIfNj9lAsAAJIwt7ZZRyPkhFW9UoTm/FLdQ851SDmEIAtATLpsBO1fdaPeuFIV6N8W4SQwoqGKn/2QZNFhFjRgFgFcTz7hoTih6/Ms75eATwsBCrxayuTOpWPGX/BlpK8D+I=
+  app: vast-wildwood-70672
+  on:
+    repo: simiogunleye/fullstack-capstone
