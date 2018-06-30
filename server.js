@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 
-app.get('/', (req,res) => {
+app.get('/signup', (req,res) => {
 	return res.status(200).render('index');
+  res.render('index')
 });
 
+app.post('/', (req,res) => {
 
+});
 
 // both runServer and closeServer need to access the same
 // server object, so we declare `server` here, and then when

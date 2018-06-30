@@ -1,0 +1,81 @@
+body  {
+  margin: 0;
+  background-color: #000000;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 0;
+}
+
+.banner-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 300px;
+}
+
+fieldset {
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-form label {
+  display: block;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  font-size: 20px;
+  text-align: left;
+}
+
+form.signup-form {
+  width: 100%;
+  text-align: center;
+  padding: 20px 40px 20px 40px;
+  background-color: #000000;
+
+}
+
+h3 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px; 
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.email, .password {
+  font-size: 15px;
+  padding: 15px;
+  width: 320px;
+  border: 2px #fff;
+}
+
+
+section {
+  padding-top: 20px;
+}
+
+button {
+  width: 320px;
+  height: 48px;
+  padding: 15px;
+  border: 2px;
+  cursor: pointer;
+  background-color: #ebebfa;
+  color: #000000;
+  font-size: 20px;
+  margin-top: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #9999e6;
+}

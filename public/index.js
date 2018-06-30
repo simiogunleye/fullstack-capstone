@@ -69,15 +69,32 @@ function displayExercises(data) {
   const exercises = data['exercises'];
   for (let i=0; i < exercises.length; i++) {
     $('body').append(
-      '<p>' + exercises[i].name + ' - ' + exercises[i].description + '<p>');
+      '<p>' + exercises[i].name + ' - ' + exercises[i].description + '</p>');
   }
 }
 
-function getAndDisplay(callback) {
-  getData(displayWorkoutTypes);
-  getData(displayExercises);
+function displayWorkouts(data) {
+  const workouts = data['workouts'];
+  for (let i=0; i < workouts.length; i++) {
+    $('body').append(
+      '<p>' + workouts[i].date + '</p>',
+      '<p>' + JSON.stringify(workouts[i].setsAndReps) + '</p>'); //can't index
+  }
+}
+
+function displayUsers(data) {
+  const users = data['users'];
+  for (let i=0; i < users.length; i++) {
+    $('body').append(
+      '<p>' + users[i].username + '</p>');
+  }
+}
+
+ function getAndDisplay(callback) {
+  [displayWorkoutTypes, displayExercises, displayWorkouts, displayUsers].forEach(fn => getData(fn))
 }
 
 $(function() {
   getAndDisplay();
 });
+
