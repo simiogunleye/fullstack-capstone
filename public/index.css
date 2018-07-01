@@ -11,6 +11,10 @@ header {
   padding: 0;
 }
 
+.dashboard-container {
+  display: none;
+}
+
 .banner-pic {
   display: block;
   margin-left: auto;
