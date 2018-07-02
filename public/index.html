@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width">
     <title>workout app</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
+
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+    <script src='lib/jquery.min.js'></script>
+    <script src='lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
   </head>
   <body>
-    <header role="banner" id="banner">
+    <header role="banner" class="banner" >
+      <div id="date"></div>
       <!--<h1>Mock Workout App<h1>-->
       <img
       src="https://media.gettyimages.com/photos/fit-and-sporty-young-woman-doing-stretching-in-city-picture-id514716176?b=1&k=6&m=514716176&s=612x612&w=0&h=dL6fvQM87dkKlxTTrXd3SfpiKD3_s_0Bn9qsVxkFT-A=" class="banner-pic" alt="woman in pushup position">  
     </header>
       <main role="main">
         <div class="dashboard-container"></div>
+        <div id="calendar"></div>
       <div class="form-container">  
         <form class= "signup-form" action="/signup/" method="post">
           <fieldset>
@@ -26,8 +33,8 @@
             <button class="submit-btn" type="submit">Submit</button>
           </fieldset>    
         </form>
-      </div>        
-    </main> 
+       </div>        
+      </main> 
     
       
 
