@@ -154,4 +154,30 @@ a {
   text-decoration: none;
 }
 
+.instructions {
+  color: #fff;
+  font-size: 20px;
+}
+
+.save-btn {
+  width: 75px;
+  height: 28px;
+  padding: 7px;
+  border: 2px;
+  cursor: pointer;
+  background-color: #ebebfa;
+  color: #000000;
+  font-size: 15px;
+  margin: 0; 
+}
+
+.workout-name {
+  font-size: 15px;
+  padding: 7px;
+  width: 210px;
+}
+
+div.workout-name-form-container {
+  display: inline-block;
+}
 
