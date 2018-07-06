@@ -1,6 +1,12 @@
-var today = new Date();
-var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
-document.getElementById("date").innerHTML = date;
+let today = new Date(); //current date
+let first = today.getDate() - today.getDay(); 
+let last = first + 6
+
+let firstDay = new Date(today.setDate(first)).toUTCString();
+let lastDay = new Date(today.setDate(last)).toUTCString();
+//let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+let date = firstDay + '-' + lastDay;
+//document.getElementById("date").innerHTML = date;
 
 
 function selectBodyPartScreen() {
@@ -14,6 +20,86 @@ function selectBodyPartScreen() {
 	`
 }
 
+function calendarView() {
+	return `
+	<div class="weekOf">${date}</div>
+    <button class="accordion">Sunday <a href="#" class="plus">+</a></button>
+    <div class="panel">
+        <p>Workouts added...</p>
+    </div>
+
+    <button class="accordion">Monday <a href="#" class="plus">+</a></button>
+    <div class="panel">
+       <p>Workouts added...</p>
+    </div>
+
+    <button class="accordion">Tuesday <a href="#" class="plus">+</a></button>
+	<div class="panel">
+	  <p>Workouts added...</p>
+	</div>
+
+    <button class="accordion">Wednesday <a href="#" class="plus">+</a></button>
+    <div class="panel">
+      <p>Workouts added...</p>
+    </div>
+
+    <button class="accordion">Thursday <a href="#" class="plus">+</a></button>
+    <div class="panel">
+      <p>Workouts added...</p>
+    </div>
+
+    <button class="accordion">Friday <a href="#" class="plus">+</a></button>
+    <div class="panel">
+      <p>Workouts added...</p>
+    </div>
+
+    <button class="accordion">Saturday <a href="#" class="plus">+</a></button>
+    <div class="panel">
+      <p>Workouts added...</p>
+    </div>
+	`
+}
+
+function chooseWorkout() {
+	$('.dashboard-container').on('click', '.choose-btn', function(event){
+		selectBodyPart();
+	});
+} 
+
+function createInstructions() {
+	return `
+	<div class="instructions">
+		<p>You can now create your own workout. <br>
+		   First, select which body part you want to find exercises for one at a time,<br>
+		   choose your exercises then create a name and save your workout. 
+		</p>
+	</div>	
+	`
+}
+
+function selectBodyPart() {
+	$('.dashboard-container').html(createInstructions());
+	$('.dashboard-container').html(selectBodyPartScreen());
+}
+
+
+function createWorkout() {
+	$('.dashboard-container').on('click', '.create-btn', function(event){
+		selectBodyPart();
+	});
+}
+
+
+function calendar() {
+	$('body').on('click', '.accordion', function(event){ 
+    	$(this).next().toggle("active").css("display", "block");
+    });
+    $('#calendar').html(calendarView());
+}
+
+
+
+
 function dashboardScreen() {
 	return `
 	        <section id="dashboard-choose" role="region">
@@ -23,98 +109,21 @@ function dashboardScreen() {
 	`
 }
 
-function calendarView() {
-	return `
-	<div class="weekOf">July</div>
-    <button class="accordion">Sunday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-
-    <button class="accordion">Monday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-
-    <button class="accordion">Tuesday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-
-    <button class="accordion">Wednesday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-
-    <button class="accordion">Thursday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-
-    <button class="accordion">Friday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-
-    <button class="accordion">Saturday</button>
-      <div class="panel">
-        <p>Workouts added...</p>
-      </div>
-	`
-}
-
-function chooseWorkout() {
-	console.log('working2');
-
-	$('.dashboard-container').on('click', '.choose-btn', function(event){
-		selectBodyPart();
-	});
-} 
-
-function createWorkout() {
-	console.log('working3');
-	$('.dashboard-container').on('click', '.create-btn', function(event){
-		selectBodyPart();
-	});
-}
-
-function selectBodyPart() {
-	console.log('working');
-	$('.dashboard-container').html(selectBodyPartScreen());
-}
-
 function showWorkoutOptions() {
-	$('.dashboard-container').show();
+	addWorkoutsToggle();
 	$('.banner-pic').hide();
 	$('#date').show();
-	//work here
-	//$('#calendar').html(calendarView());
 	calendar();
 	$('.dashboard-container').html(dashboardScreen());
 }
 
-function calendar() {
-	let acc = document.getElementsByClassName("accordion");
-	let i;
 
-	for (i = 0; i < acc.length; i++) {
-	    acc[i].addEventListener("click", function() {
-	        /* Toggle between adding and removing the "active" class,
-	        to highlight the button that controls the panel */
-	        this.classList.toggle("active");
-
-	        /* Toggle between hiding and showing the active panel */
-	        let panel = this.nextElementSibling;
-	        if (panel.style.display === "block") {
-	            panel.style.display = "none";
-	        } else {
-	            panel.style.display = "block";
-	        }
-	    });
+function addWorkoutsToggle() {
+	$('#calendar').on('click', '.plus', function(event) {
+		$('.dashboard-container').toggle();
+	});
 }
-$('#calendar').html(calendarView());
 
-}
 
 function hideForm() {
 	$('.form-container').hide();

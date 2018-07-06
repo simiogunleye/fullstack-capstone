@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>workout app</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
-
-    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-    <script src='lib/jquery.min.js'></script>
-    <script src='lib/moment.min.js'></script>
-    <script src='fullcalendar/fullcalendar.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
     <header role="banner" class="banner" >
@@ -19,26 +15,26 @@
       src="https://media.gettyimages.com/photos/fit-and-sporty-young-woman-doing-stretching-in-city-picture-id514716176?b=1&k=6&m=514716176&s=612x612&w=0&h=dL6fvQM87dkKlxTTrXd3SfpiKD3_s_0Bn9qsVxkFT-A=" class="banner-pic" alt="woman in pushup position">  
     </header>
       <main role="main">
-        <div class="dashboard-container"></div>
         <div id="calendar"></div>
-      <div class="form-container">  
-        <form class= "signup-form" action="/signup/" method="post">
-          <fieldset>
-            <legend><h3>Sign Up</h3></legend>
-            <label for="email" required></label>
-            <input type="email" name="email" class="email" placeholder="Email">
-            <label for="password" required></label>
-            <input type="password" name="password" class="password" placeholder="Password">
-            <!--changed button type from 'submit' to 'button' due to form not submitting and getting cancelled, need to change back-->
-            <button class="submit-btn" type="submit">Submit</button>
-          </fieldset>    
-        </form>
-       </div>        
+        <div class="dashboard-container"></div>
+        <div class="form-container">  
+          <form class= "signup-form" action="/signup/" method="post">
+            <fieldset>
+              <legend><h3>Sign Up</h3></legend>
+              <label for="email" required></label>
+              <input type="email" name="email" class="email" placeholder="Email">
+              <label for="password" required></label>
+              <input type="password" name="password" class="password" placeholder="Password">
+              <!--changed button type from 'submit' to 'button' due to form not submitting and getting cancelled, need to change back-->
+              <button class="submit-btn" type="submit">Submit</button>
+            </fieldset>    
+          </form>
+        </div>        
       </main> 
     
       
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
     <!--<script src="index.js"></script>-->
     <script src="dashboard.js"></script>
   </body>
