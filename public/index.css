@@ -165,10 +165,16 @@ a {
   padding: 7px;
   border: 2px;
   cursor: pointer;
-  background-color: #ebebfa;
-  color: #000000;
+  background-color: purple;
+  color: #fff;
   font-size: 15px;
   margin: 0; 
+}
+
+.save-workout-btn {
+  background-color: purple;
+  color: #fff;
+  width: 160px;
 }
 
 .workout-name {
@@ -181,3 +187,22 @@ div.workout-name-form-container {
   display: inline-block;
 }
 
+ul li {
+  color: #fff;
+  text-align: center;
+  list-style: none; 
+}
+
+
+h2, h1 {
+  color: #fff;
+}
+
+.backto-bodyPart {
+  font-size: 30px;
+  font-color: #fff;
+}
+
+a.workout-choice-name {
+  text-decoration: underline;
+}
