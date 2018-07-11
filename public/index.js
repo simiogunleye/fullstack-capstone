@@ -98,3 +98,5 @@ $(function() {
   getAndDisplay();
 });
 
+module.exports = mock_data
+

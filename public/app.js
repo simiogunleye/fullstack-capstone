@@ -1,3 +1,7 @@
+//let mockData = require('.index.js')
+
+
+
 let today = new Date(); //current date
 let first = today.getDate() - today.getDay(); 
 let last = first + 6
@@ -54,7 +58,7 @@ function armsScreen() {
 				<h1>Arms</h1>
 			</header>
 			<section "choose-exercises">
-				<button class="exercise-choice"><a href="#" class="plus">+</a>Exercise 1</button>
+				<button class="exercise-choice">Exercise 1</button>
 			</section>
 			<div class="backto-bodyPart"><a href="#">Choose another body part</a></div>	
 		</div>
@@ -68,7 +72,7 @@ function coreScreen() {
 				<h1>Core</h1>
 			</header>
 			<section "choose-exercises">
-				<button class="exercise-choice"><a href="#" class="plus">+</a>Exercise 1</button>
+				<button class="exercise-choice">Exercise 1</button>
 			</section>
 			<div class="backto-bodyPart"><a href="#">Choose another body part</a></div>	
 		</div>
@@ -82,7 +86,7 @@ function legsScreen() {
 				<h1>Legs</h1>
 			</header>
 			<section "choose-exercises">
-				<button class="exercise-choice"><a href="#" class="plus">+</a>Exercise 1</button>
+				<button class="exercise-choice">Exercise 1</button>
 			</section>
 			<div class="backto-bodyPart"><a href="#">Choose another body part</a></div>	
 		</div>
@@ -96,7 +100,7 @@ function glutesScreen() {
 				<h1>Glutes</h1>
 			</header>
 			<section "choose-exercises">
-				<button class="exercise-choice"><a href="#" class="plus">+</a>Exercise 1</button>
+				<button class="exercise-choice">Exercise 1</button>
 			</section>
 			<div class="backto-bodyPart"><a href="#">Choose another body part</a></div>	
 		</div>
@@ -233,7 +237,6 @@ function dashboardScreen() {
 	        </section>
 	`
 }
-
 
 
 function addWorkoutsToggle() {
