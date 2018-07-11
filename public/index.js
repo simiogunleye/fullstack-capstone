@@ -1,4 +1,4 @@
-const mock_data = {
+const mockData = {
 
   "exercises": [
     {
@@ -12,7 +12,7 @@ const mock_data = {
       description: "Lay on your back then sit up",
       group: "abs",
       _id: "2"
-    } 
+    }
   ],
 
   "workoutTypes": [
@@ -48,11 +48,13 @@ const mock_data = {
       username: "user2",
       workout: ["1", "2"]
     }
-    
-  ]
+  ];
 
 };
 
+module.exports = { mockData };
+
+/*
 function getData(callback) {
   setTimeout(function(){callback(mock_data)}, 100);
 }
@@ -97,4 +99,4 @@ function displayUsers(data) {
 $(function() {
   getAndDisplay();
 });
-
+*/

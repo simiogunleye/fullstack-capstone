@@ -4,7 +4,8 @@
   "description": "workout journal",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+	"start": "nodemon server.js"
   },
   "author": "Simi",
   "license": "ISC",
