@@ -17,11 +17,19 @@ const mockData = {
 
   "workoutTypes": [
     {
-      name: "core",
+      name: "Arms",
       exercises: ['1', '2']
     },
     {
-      name: "arms",
+      name: "Core",
+      exercises: ['2', '4']
+    },
+    {
+      name: "Glutes",
+      exercises: ['1', '2']
+    },
+    {
+      name: "Legs",
       exercises: ['2', '4']
     }
   ],
@@ -62,7 +70,7 @@ let lastDay = new Date(today.setDate(last)).toUTCString();
 let date = firstDay + '-' + lastDay;
 //document.getElementById("date").innerHTML = date;
 
-function generateHTMLWorkoutTypesScreen() {
+/*2*/function generateHTMLWorkoutTypesScreen() {
 	// populated list of workoutTypes
 	return `
 		<div class="instructions">
@@ -81,50 +89,65 @@ function generateHTMLWorkoutTypesScreen() {
             </fieldset>
           </form>
         </div>
-        <section class='workout-types-container' role="region">
+        <section class="workout-types-container" role="region">
         </section>`;
 };
 
-function renderWorkoutTypesScreen() {
+/*1*/function renderWorkoutTypesScreen() {
 	console.log('got here');
 	$('.dashboard-container').html(generateHTMLWorkoutTypesScreen());
 	renderWorkoutTypes();
 };
 
-function renderWorkoutTypeExercises(workoutType) {
+/*6*/function renderWorkoutTypeExercises(workoutType) {
 	$('.dashboard-container').html(generateHTMLWorkoutTypeExercisesScreen(workoutType));
+	workoutTypeExercises();
 };
 
-function generateHTMLWorkoutTypeExercisesScreen(workoutType) {
+/*7*/function generateHTMLWorkoutTypeExercisesScreen(workoutType) {
 	return `
 		<div class="workout-type-exercises">
 			<h3>${workoutType}</h3>
-			<section class="choose-exercises">
+			<section class="choose-exercises-container" role="region">
 			</section>
 			<a href="#">Choose another body part</a>
 		</div>`;
 }
 
+//render the exercises
+function workoutTypeExercises() {
+	mockData.exercises.forEach(exercise => {
+		$('.choose-exercises-container').append(generateExercise(exercise.name));
+	})
+};
+
 // render the workout types
-function renderWorkoutTypes() {
+/*3*/function renderWorkoutTypes() {
 	console.log('data workouts' + mockData.workoutTypes);
 	mockData.workoutTypes.forEach(workoutType => {
-		console.log(workoutType.name);
 		$('.workout-types-container').append(generateHTMLWorkoutType(workoutType.name));
 	});
 	$('.workout-types-container').append(`<button class="save-workout-btn" type="submit">Save Workout</button>`);
 };
 
-function generateHTMLWorkoutType(workoutType) {
+/*4*/function generateHTMLWorkoutType(workoutType) {
 	return `
 		<button class="workout-type-button">${workoutType}</button>`;
 };
+
+
+
+function generateExercise(exercise) {
+	return `
+		<button class="exercise-button">${exercise}</button>;
+	`
+}
 
 // render the exercises per workout type
 
 // attach the event handlers
 
-function handleClickWorkoutType() {
+/*5*/function handleClickWorkoutType() {
 	$('.dashboard-container').on('click', '.workout-type-button', function(event) {
 		const workoutType = $(this).text();
 		console.log('handle click ' + workoutType);
@@ -132,10 +155,19 @@ function handleClickWorkoutType() {
 	});
 };
 
-function chooseWorkoutScreen() {
+
+
+
+
+
+
+
+
+
+function renderWorkoutScreen() {
 	return `
 		<div class="workout-choices">
-			<h2>Choose your workout</h2><br>
+			<h2>Choose your workout</h2>
 			<h3><a href="#" class=workout-choice-name>Total Body</a></h3>
 				<ul>
 					<span><li>exercise</li></span>
@@ -163,7 +195,7 @@ function chooseWorkoutScreen() {
 function chooseWorkout() {
 	$('.dashboard-container').on('click', '.choose-btn', function(event){
 		hideCalendar();
-		$('.dashboard-container').html(chooseWorkoutScreen());
+		$('.dashboard-container').html(renderWorkoutScreen());
 	});
 }
 
@@ -268,7 +300,7 @@ function dashboardStart() {
 	signUp();
 	chooseWorkout();
 	createWorkout();
-	renderWorkoutTypes();
+	//renderWorkoutTypes();
 	handleClickWorkoutType();
 }
 

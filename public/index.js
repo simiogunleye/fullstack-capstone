@@ -17,11 +17,19 @@ const mockData = {
 
   "workoutTypes": [
     {
-      name: "core",
+      name: "Arms",
       exercises: ['1', '2']
     },
     {
-      name: "arms",
+      name: "Core",
+      exercises: ['2', '4']
+    },
+    {
+      name: "Glutes",
+      exercises: ['1', '2']
+    },
+    {
+      name: "Legs",
       exercises: ['2', '4']
     }
   ],
