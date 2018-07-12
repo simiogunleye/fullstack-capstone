@@ -292,7 +292,7 @@ let date = firstDay + '-' + lastDay;
 
 //render the exercises
 function workoutTypeExercises() {
-	exercisesAndTypes.workoutType.forEach(exercise => {
+	exercisesAndTypes.Arms.forEach(exercise => {
 		$('.choose-exercises-container').append(generateExercise(exercise.name));
 	})
 };
