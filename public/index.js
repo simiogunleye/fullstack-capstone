@@ -1,4 +1,4 @@
-const mock_data = {
+const mockData = {
 
   "exercises": [
     {
@@ -12,7 +12,7 @@ const mock_data = {
       description: "Lay on your back then sit up",
       group: "abs",
       _id: "2"
-    } 
+    }
   ],
 
   "workoutTypes": [
@@ -48,55 +48,8 @@ const mock_data = {
       username: "user2",
       workout: ["1", "2"]
     }
-    
-  ]
+  ];
 
 };
 
-function getData(callback) {
-  setTimeout(function(){callback(mock_data)}, 100);
-}
-
-function displayWorkoutTypes(data) {
-  const workoutTypes = data['workoutTypes'];
-  for (let i=0; i < workoutTypes.length; i++ ) {
-    $('body').append(
-      '<p>' + workoutTypes[i].name + '</p>');
-  }
-}
-
-function displayExercises(data) {
-  const exercises = data['exercises'];
-  for (let i=0; i < exercises.length; i++) {
-    $('body').append(
-      '<p>' + exercises[i].name + ' - ' + exercises[i].description + '</p>');
-  }
-}
-
-function displayWorkouts(data) {
-  const workouts = data['workouts'];
-  for (let i=0; i < workouts.length; i++) {
-    $('body').append(
-      '<p>' + workouts[i].date + '</p>',
-      '<p>' + JSON.stringify(workouts[i].setsAndReps) + '</p>'); //can't index
-  }
-}
-
-function displayUsers(data) {
-  const users = data['users'];
-  for (let i=0; i < users.length; i++) {
-    $('body').append(
-      '<p>' + users[i].username + '</p>');
-  }
-}
-
- function getAndDisplay(callback) {
-  [displayWorkoutTypes, displayExercises, displayWorkouts, displayUsers].forEach(fn => getData(fn))
-}
-
-$(function() {
-  getAndDisplay();
-});
-
-module.exports = mock_data
-
+module.exports = { mockData };
