@@ -34,8 +34,11 @@ header {
 
 fieldset {
   border: none;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+fieldset.workout {
+  display: inline;
+  border: 1px;
 }
 
 .signup-form label {
@@ -52,6 +55,10 @@ form.signup-form {
   padding: 20px 40px 20px 40px;
   background-color: #000000;
 
+}
+
+form.workout-name-form {
+  text-align: center;
 }
 
 h3 {
@@ -76,8 +83,8 @@ section {
 
 button {
   width: 320px;
-  height: 48px;
-  padding: 0;
+  height: 55px;
+  padding: 5px;
   border: 2px;
   cursor: pointer;
   background-color: #ebebfa;
@@ -108,6 +115,7 @@ button:hover {
     outline: none;
     transition: 0.4s;
     margin-top: 0;
+    padding: 15px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -147,11 +155,17 @@ button:hover {
   float: right;
   font-size: 40px;
   position: relative;
-  bottom: 20px;
+  bottom: 10px;
 }
 
 a {
   text-decoration: none;
+}
+
+a.back-to-body {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 20px;
 }
 
 .instructions {
@@ -161,14 +175,14 @@ a {
 
 .save-btn {
   width: 75px;
-  height: 28px;
+  height: 35px;
   padding: 7px;
-  border: 2px;
   cursor: pointer;
   background-color: purple;
   color: #fff;
   font-size: 15px;
   margin: 0; 
+  display: inline-block;
 }
 
 .save-workout-btn {
@@ -184,7 +198,7 @@ a {
 }
 
 div.workout-name-form-container {
-  display: inline-block;
+  
 }
 
 ul li {
@@ -206,4 +220,12 @@ h2, h1 {
 
 a.workout-choice-name {
   text-decoration: underline;
+}
+
+p {
+  padding: 20px;
+}
+
+div.workout-type-exercises {
+  padding-bottom: 40px;
 }

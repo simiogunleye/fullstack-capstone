@@ -284,7 +284,7 @@ let date = firstDay + '-' + lastDay;
 			<h3>${workoutType}</h3>
 			<section class="choose-exercises-container" role="region">
 			</section>
-			<a href="#">Choose another body part</a>
+			<a class="back-to-body" href="#">Choose another body part</a>
 		</div>`;
 }
 
