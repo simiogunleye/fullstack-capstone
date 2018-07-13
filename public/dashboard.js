@@ -180,13 +180,11 @@ const mockData = {
     {
       name: "crunches",
       description: "Lay on your back then sit up",
-      group: "abs",
       _id: "1"
     },
     {
       name: "crunches2",
       description: "Lay on your back then sit up",
-      group: "abs",
       _id: "2"
     }
   ],
@@ -277,7 +275,7 @@ let date = firstDay + '-' + lastDay;
 
 /*6*/function renderWorkoutTypeExercises(workoutType) {
 	$('.dashboard-container').html(generateHTMLWorkoutTypeExercisesScreen(workoutType));
-	workoutTypeExercises();
+	workoutTypeExercises(workoutType);
 };
 
 /*7*/function generateHTMLWorkoutTypeExercisesScreen(workoutType) {
@@ -291,8 +289,8 @@ let date = firstDay + '-' + lastDay;
 }
 
 //render the exercises
-function workoutTypeExercises() {
-	exercisesAndTypes.Arms.forEach(exercise => {
+function workoutTypeExercises(workoutType) {
+	exercisesAndTypes[workoutType].forEach(exercise => {
 		$('.choose-exercises-container').append(generateExercise(exercise.name));
 	})
 };
