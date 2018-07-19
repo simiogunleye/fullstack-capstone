@@ -2,6 +2,9 @@ body  {
   margin: 0;
   background-color: #000000;
 }
+ main {
+  padding-bottom: 30px;
+ }
 
 body * {
   box-sizing: border-box;
