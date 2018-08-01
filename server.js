@@ -5,11 +5,15 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
+const exercisesRouter = require('./routes/exercisesRouter');
+const workoutsRouter = require('./routes/workoutsRouter');
+const usersRouter = require('./routes/usersRouter');
 
 const { DATABASE_URL, PORT } = require('./config');
 
 const { Exercise } = require('./models/exercise');
-const { WorkoutType } = require('./models/WorkoutType');
+const { Workout } = require('./models/workout');
+const { User } = require('./models/user');
 
 const app = express();
 app.use(morgan('common'));
@@ -17,26 +21,16 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-app.get('/signup', (req,res) => {
-	res.status(200).render('index');
-});
+//Routes
+app.use('/api/exercises', exercisesRouter);
+app.use('/api/workouts', workoutsRouter);
+app.use('/api/signup', usersRouter);
 
-app.get('/exercises', (req,res) => {
-  Exercise
-  .find()
-  .then(exercises => {
-    res.json(exercises);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json({error: "something went wrong"});
-  });
-  
-});
 
-app.post('/create-workout', (req,res) => {
 
-});
+
+
+
 
 // both runServer and closeServer need to access the same
 // server object, so we declare `server` here, and then when
@@ -83,15 +77,10 @@ function closeServer() {
 // if server.js is called directly (aka, with `node server.js`), this block
 // runs. but we also export the runServer command so other code (for instance, test code) can start the server as needed.
 if (require.main === module) {
-  runServer().catch(err => console.error(err));
-};
+  runServer(DATABASE_URL).catch(err => console.error(err));
+}
 
 module.exports = {app, runServer, closeServer};
-
-
-
-
-
 
 
 

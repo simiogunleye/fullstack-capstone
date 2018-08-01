@@ -189,35 +189,19 @@ const mockData = {
     }
   ],
 
-  "workoutTypes": [
-    {
-      name: "Arms",
-      exercises: ['1', '2']
-    },
-    {
-      name: "Core",
-      exercises: ['2', '4']
-    },
-    {
-      name: "Glutes",
-      exercises: ['1', '2']
-    },
-    {
-      name: "Legs",
-      exercises: ['2', '4']
-    }
-  ],
-
+  
   "workouts": [
     {
-      date: "06/18/2018",
-      _id: "12345",
-      setsAndReps: [{"1": {1: 10, 2: 15, 3: 12}}, {"2": {1: 10, 2: 15}}]
+      workoutName: "Muscle Builder",
+	  exercises: ["1", "2"],
+	  created: "7/27/2018",
+	  date: Date
     },
     {
-      date: "06/25/2018",
-      _id: "54321",
-      setsAndReps: [{"1": {1: 10, 2: 15, 3: 12}}, {"2": {1: 10, 2: 15}}]
+      workoutName: "Weight Loss",
+	  exercises: ["1", "2"],
+	  created: "7/23/2018",
+	  date: "7/28/2018"
     }
   ],
 
