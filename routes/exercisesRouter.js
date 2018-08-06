@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+
+
 const { Exercise } = require("../models/exercise");
 
 router.get('/', (req,res) => {
@@ -13,8 +17,7 @@ router.get('/', (req,res) => {
   .catch(err => {
     console.error(err);
     res.status(500).json({error: "something went wrong"});
-  });
-  
+  });  
 });
 
 
